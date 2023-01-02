@@ -1,36 +1,163 @@
+@import 'meyer-reset.css';
+
+/* SETUP */
+* {
+    box-sizing: border-box;
+}
+
+picture {
+    display: block;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+p a, li a, {
+    display: inline-block;
+    color: blue;
+    text-decoration: underline;
+}
+
+/* SETTINGS */
+
+html {
+    --black: #333;
+    --color: rgb(60, 130, 246);
+    --white: #efefef;
+    --dark: rgb(31, 41, 55);
+    --light: lighterblue;
+}
+
+
+
+/* DEV STYLES */
+
+/*body * {
+    border: 1px solid blue;
+    padding: 2px;
+}
+inner-column {
+    border: 8px solid orange;
+}
+graphic-diptych {
+    border: 8px solid dodgerblue;
+}
+header, footer, main {
+    border: 3px solid red;   
+}
+section {
+    border: 4px solid lime;
+}*/
+
+/* STRUCTURE */
 body {
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    font-family: Roboto, sans-serif;
     display: flex;
-    flex-direction: row;
-  }
+    flex-direction: column;
+	/*border: 10px solid blue;*/
+    min-height: 100vh;
+}
 
-.header {
+main {
+	flex-grow: 1;
+	/*border: 10px solid pink;*/
+}
+
+inner-column {
+    display: block;
+    padding: 10px;
+    /**/
+    width: 98%;
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* TYPOGRAPHY */
+.loud-voice {
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 0.9;
+}
+
+.calm-voice {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+
+
+/* COMPONENTS */
+.button {
+    font-family: sans-serif;
+    display: inline-block;
+    background-color: var(--color);
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+
+
+
+/* MODULES */
+graphic-diptych {
+    display: block;
     display: flex;
-    justify-items: flex-end;
-    align-items: center;
-    padding: 16px;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.left-header {
-    font-size: 24px;
-    color: #F9FAF8;
+graphic-diptych picture {
+    
 }
 
-.right-header {
-    font-size: 18px;
-    color: #E5E7EB;
-    gap: 16px;
+graphic-diptych text-content {
+    display: block;
 }
 
-ul {
-    list-style-type: none;
-    display: flex;
-    margin: 10px;
-    padding: 0;
-    gap: 16px;
+graphic-diptych text-content p {
+    margin-top: 10px;
 }
+
+graphic-diptych text-content .button {
+    margin-top: 10px;
+}
+
+
+
+@media (min-width: 700px) {
+    graphic-diptych {
+        flex-direction: row-reverse;
+    }
+    graphic-diptych :is(text-content, picture) {
+        flex-basis: 50%
+        
+    }
+}
+
+.welcome {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.welcome .button {
+    background-color: var(--color);
+    color: var(--white)
+}
+
+
+
+
 
 
