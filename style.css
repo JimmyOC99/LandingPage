@@ -35,6 +35,9 @@ html {
     --white: #efefef;
     --dark: rgb(31, 41, 55);
     --light: lighterblue;
+    --main-header: #F9FAF8;
+    --secondary: #E5E7EB;
+    --information: #1f2937;
 }
 
 
@@ -76,21 +79,42 @@ inner-column {
     padding: 10px;
     /**/
     width: 98%;
-    max-width: 900px;
+    max-width: 1100px;
     margin-right: auto;
     margin-left: auto;
+    /**/
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
+
+header inner-column {
+    padding: 10px;
+}
+
+subheading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
 
 /* TYPOGRAPHY */
 .loud-voice {
-    font-family: sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 32px;
     font-weight: 700;
     line-height: 0.9;
 }
 
+@media {min-width: 700px;
+    .loud-voice {
+        font-size: 40px;
+    }
+}
+
 .calm-voice {
-    font-family: sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1rem;
     line-height: 1.3;
 }
@@ -99,7 +123,7 @@ inner-column {
 
 /* COMPONENTS */
 .button {
-    font-family: sans-serif;
+    font-family: "Roboto", sans-serif;
     display: inline-block;
     background-color: var(--color);
     color: white;
@@ -108,14 +132,55 @@ inner-column {
     border-radius: 6px;
 }
 
+.button-center {
+    text-align: center;
+}
+
+button {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--color);
+    color: white;
+    font-size: 16px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 6px;
+}
+
 
 
 /* MODULES */
+header inner-column {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+header inner-column h1 {
+    color: var(--main-header);
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+header inner-column ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 16px;
+    color: var(--secondary);
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+}
+
+
 graphic-diptych {
     display: block;
     display: flex;
     flex-direction: column;
     gap: 20px;
+
 }
 
 graphic-diptych picture {
@@ -134,6 +199,16 @@ graphic-diptych text-content .button {
     margin-top: 10px;
 }
 
+graphic-diptych text-content .loud-voice {
+    color: var(--main-header);
+    font-size: 48px;
+}
+
+graphic-diptych text-content .calm-voice {
+    color: var(--secondary);
+    font-size: 18px;
+}
+
 
 
 @media (min-width: 700px) {
@@ -146,16 +221,72 @@ graphic-diptych text-content .button {
     }
 }
 
+products-grid {
+    display: block;
+    margin: 20px 80px;
+}
+
+products-grid h2 {
+    font-family: "Roboto", sans-serif;
+    color: var(--information);
+    font-size: 36px;
+    font-weight: 700;
+}
+
+products-grid .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1em;
+}
+
+products-grid text-content h3 {
+    font-family: "Roboto", sans-serif;
+    display: block;
+    text-align: center;
+    margin: 10px;
+    color: var(--information);
+}
+
+
+
+.quote {
+    padding: 20px 80px;
+}
+
+.quote p {
+    font-family: "Roboto", sans-serif;
+    font-size: 36px;
+    color: #1f2937;
+    font-weight: 100;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.quote a {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #1f2937;
+    font-weight: 900;
+    text-align: right;   
+}
+
+header {
+    background-color: var(--dark);
+}
+
 .welcome {
     background-color: var(--dark);
-    color: var(--white);
+    
 }
 
 .welcome .button {
     background-color: var(--color);
-    color: var(--white)
+    color: var(--main-header)
 }
 
+.quote {
+    background-color: var(--secondary);
+}
 
 
 
